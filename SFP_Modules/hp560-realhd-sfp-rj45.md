@@ -49,7 +49,7 @@ RJ45 SFP+ modules pull 2-3W each. In a dead air pocket behind a PCIe bracket, th
 
 The spoofed DDM output made my previous monitoring tool attempts useless — they choked on the fake data or reported nonsense. I am a grease monkey by nature not a CS major.
 
-**[sfp-monitor](https://github.com/f0restolf/sfp-monitor)** is a lightweight C daemon that polls `ethtool -m`, extracts only the real temperature and voltage readings, and writes them as hwmon-format files for CoolerControl (CC) to consume. It runs as a systemd service and outputs to `/run/sfp-monitor/` (tmpfs). To actually implement it in CC you will have to create a custom sensor and use the from file option, point it to the files created ofc. The voltage I havent really used but hey, its there!
+**[sfp-monitor](https://github.com/f0restolf/CC-SFP-module-sensor)** is a lightweight C daemon that polls `ethtool -m`, extracts only the real temperature and voltage readings, and writes them as hwmon-format files for CoolerControl (CC) to consume. It runs as a systemd service and outputs to `/run/sfp-monitor/` (tmpfs). To actually implement it in CC you will have to create a custom sensor and use the from file option, point it to the files created ofc. The voltage I havent really used but hey, its there!
 
 ## HP NIC naming cheat sheet
 
